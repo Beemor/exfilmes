@@ -1,5 +1,5 @@
 const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNGI2MDRhOGRkMmRkOWY5OGIwNDdkYzRmNWRlYTMwNyIsIm5iZiI6MTc3NzU1OTUzMS41NjQ5OTk4LCJzdWIiOiI2OWYzNjdlYjZkNDY1NTZkOGViNzIxN2YiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.7npxWyEU6UXnx4APUvFFLrAUtpMmatya1bbelWCNzKY";
-const url = "https://api.themoviedb.org/3/movie/now_playing";
+const url = "https://api.themoviedb.org/3/movie/now_playing?language=pt-BR";
 
 fetch(url, {
     method: "GET",
@@ -19,8 +19,10 @@ fetch(url, {
             div.classList.add("filme");
 
             div.innerHTML = `
+                <img src="https://image.tmdb.org/t/p/w185${filme.poster_path}" >
                 <h3>${filme.title}</h3>
-                <p>${filme.overview}</p>`;
+                <p>${filme.overview}</p>
+                `;
 
             lista.appendChild(div);
             
