@@ -32,3 +32,24 @@ fetch(url, {
     .catch(error => {
         console.error("Erro ao buscar filme:", error);
     })
+
+    function pesquisa() {
+
+    let nFilme = document.getElementById("pesquisa").value.toLowerCase();
+
+    let filmes = document.querySelectorAll(".filme");
+
+    filmes.forEach(filme => {
+
+        let titulo = filme.querySelector("h3").textConte.toLowerCase();
+
+        if(titulo.includes(nFilme)) {
+            filme.style.display = "block";
+        } else {
+            filme.style.display = "none";
+        }
+
+    });
+
+}
+    pesquisa();
